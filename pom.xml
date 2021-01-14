@@ -43,7 +43,8 @@
 				(at <project xmlns="http://maven.apache.org/POM/4.0.0"...)-->
 				<configuration>
 					<goals>install</goals> <!-- default was deploy, but we don't want that -->
-					<!-- clean -> validate -> ... -> install -> site -> deploy -->
+						<!-- clean -> validate -> ... -> install -> site -> deploy -->
+					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
