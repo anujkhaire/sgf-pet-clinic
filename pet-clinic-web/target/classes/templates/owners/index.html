@@ -20,7 +20,10 @@
         </thead>
         <tbody>
         <tr th:each="owner: ${owners}">
+            <!-- OGNL is basically a dot-notation syntax that allows access to properties within
+            java objects (via getters). So ${owner.firstName} internally is owner.getFirstName() -->
             <td th:text="${owner?.id}">1</td>
+            <!--? is an operator to avoid NullPointerException -->
             <td th:text="${owner?.firstName}">Joe</td>
             <td th:text="${owner?.lastName}">Buck</td>
         </tr>
