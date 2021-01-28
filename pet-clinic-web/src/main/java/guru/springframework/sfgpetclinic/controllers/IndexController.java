@@ -11,4 +11,9 @@ public class IndexController {
 
         return "index"; // returning the view name
     }
+
+    @RequestMapping("/oups")
+    public String oupsHandler() {
+        return "notimplemented";
+    }
 }
