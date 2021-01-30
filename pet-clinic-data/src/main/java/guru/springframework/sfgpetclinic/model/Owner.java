@@ -1,13 +1,23 @@
 package guru.springframework.sfgpetclinic.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name = "owners") // again for more readable code. Hibernate does it by default if you don't want to.
 public class Owner extends Person {
 
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "city")
     private String city;
+
+    @Column(name = "telephone")
     private String telephone;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {
